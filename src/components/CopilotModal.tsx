@@ -66,7 +66,6 @@ export const CopilotModal = forwardRef<CopilotModalHandle, Props>(
         skip: "Skip",
       },
       svgMaskPath,
-      stopOnOutsideClick = false,
       onOutsideClick = () => false,
       arrowColor = "#fff",
       arrowSize = ARROW_SIZE,
