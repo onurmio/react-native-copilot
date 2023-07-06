@@ -66,14 +66,14 @@ export const CopilotModal = forwardRef<CopilotModalHandle, Props>(
         skip: "Skip",
       },
       svgMaskPath,
-      onOutsideClick = () => false,
+      stopOnOutsideClick = false,
       arrowColor = "#fff",
       arrowSize = ARROW_SIZE,
       margin = MARGIN
     },
     ref
   ) {
-    const { stop, currentStep, visible } = useCopilot();
+    const { stop, currentStep, visible, goToNext } = useCopilot();
     const [tooltipStyles, setTooltipStyles] = useState({});
     const [arrowStyles, setArrowStyles] = useState({});
     const [animatedValues] = useState({
@@ -259,10 +259,10 @@ export const CopilotModal = forwardRef<CopilotModalHandle, Props>(
     };
 
     const handleMaskClick = () => {
-      const stopOnOutsideClick = onOutsideClick();
-
       if (stopOnOutsideClick) {
         handleStop();
+      } else {
+        goToNext();
       }
     };
 
