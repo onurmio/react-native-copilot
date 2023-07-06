@@ -69,7 +69,7 @@ export interface CopilotOptions {
   animationDuration?: number;
   tooltipComponent?: React.ComponentType<TooltipProps>;
   tooltipStyle?: ViewStyle;
-  stepNumberComponent?: React.ComponentType<any >;
+  stepNumberComponent?: React.ComponentType<any>;
   animated?: boolean;
   labels?: Labels;
   androidStatusBarVisible?: boolean;
@@ -79,5 +79,6 @@ export interface CopilotOptions {
   arrowSize?: number
   margin?: number
   stopOnOutsideClick?: boolean;
+  onOutsideClick?: () => void;
   backdropColor?: string;
 }
